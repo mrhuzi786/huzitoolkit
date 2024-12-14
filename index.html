@@ -5,47 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Hussain - Huzi Toolkit</title>
     <style>
-        @keyframes neonGlow {
-            0%, 100% {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
-                color: #fff;
-            }
-            50% {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 90px #ff0, 0 0 100px #ff0, 0 0 150px #ff0;
-                color: #ff0;
-            }
-        }
-
+        /* Optimized CSS with gradient color scheme */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(135deg, #001f3f, #000c1f); /* Dark blue gradient */
             color: #f2f2f2;
             overflow-x: hidden;
             touch-action: manipulation;
         }
 
         header {
-            background: linear-gradient(135deg, #fc466b, #3f5efb);
+            background: linear-gradient(135deg, #FF4136, #ff0000); /* Red gradient */
             padding: 20px;
             text-align: center;
-            position: relative;
         }
 
         .headline {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 1.5em;
-            animation: neonGlow 1.5s infinite alternate;
+            color: #fff;
         }
 
         header h1 {
             margin: 0;
             font-size: 2em;
             color: #fff;
-            text-shadow: 2px 2px #000;
         }
 
         main {
@@ -53,9 +37,6 @@
         }
 
         .app-details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
         }
 
@@ -66,18 +47,11 @@
         }
 
         .app-details h2 {
-            display: flex;
-            align-items: center;
             margin: 10px 0;
-            background: linear-gradient(135deg, #8e44ad, #c0392b);
+            background: linear-gradient(135deg, #001f3f, #000c1f); /* Dark blue gradient */
             padding: 10px;
             border-radius: 10px;
             color: #fff;
-            text-shadow: 1px 1px #000;
-        }
-
-        .app-details h2 img {
-            margin-right: 10px;
         }
 
         .description {
@@ -97,16 +71,14 @@
             padding: 10px 20px;
             font-size: 1em;
             color: #fff;
-            background: linear-gradient(135deg, #fc466b, #3f5efb);
+            background: linear-gradient(135deg, #FF4136, #ff0000); /* Red gradient */
             border: none;
             cursor: pointer;
-            transition: background 0.3s;
             border-radius: 5px;
-            text-shadow: 1px 1px #000;
         }
 
         button:hover {
-            background: linear-gradient(135deg, #3f5efb, #fc466b);
+            background: linear-gradient(135deg, #ff0000, #FF4136); /* Inverted red gradient on hover */
         }
 
         .app-images {
@@ -122,7 +94,6 @@
         .images {
             display: flex;
             overflow-x: auto;
-            scroll-snap-type: x mandatory;
             gap: 10px;
             padding: 10px;
         }
@@ -131,9 +102,8 @@
             flex-shrink: 0;
             width: 200px;
             height: auto;
-            border: 2px solid #fc466b;
+            border: 2px solid #FF4136;
             transition: transform 0.3s;
-            scroll-snap-align: start;
         }
 
         .images img:hover {
@@ -151,26 +121,20 @@
         }
 
         .review {
-            background: linear-gradient(135deg, #8e44ad, #c0392b);
+            background: linear-gradient(135deg, #001f3f, #000c1f); /* Dark blue gradient */
             padding: 10px;
             margin: 10px auto;
             width: 80%;
             border-radius: 5px;
             color: #fff;
-            text-shadow: 1px 1px #000;
-        }
-
-        .review-text {
-            font-size: 1em;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background: linear-gradient(135deg, #fc466b, #3f5efb);
+            background: linear-gradient(135deg, #FF4136, #ff0000); /* Red gradient */
             margin-top: 40px;
             color: #fff;
-            text-shadow: 1px 1px #000;
         }
 
         footer p {
@@ -200,7 +164,7 @@
                 <img src="logo.jpg" alt="Huzi Toolkit Logo">
                 Tech Hussain x Huzi TOOLKIT 
             </h2>
-            <p class="description">Huzi Tᴏᴏʟᴋɪᴛ Is The Ultimate Toolkit Packed With Every Hacking Methods And Much More. This Is An Partnership Project Between <b>Tech Hussain</b> and <b>Mr Huzi</b> This Toolkit Will Be A Solution For Your All Hacking Needs To Be Fullfil.</p>
+            <p class="description">Huzi Toolkit is the ultimate toolkit packed with every hacking method and much more. This is a partnership project between <b>Tech Hussain</b> and <b>Mr Huzi</b>. This toolkit will be a solution for all your hacking needs.</p>
             <p class="size">Size: 28.12 MB</p>
             <p class="region">Region: Pakistan</p>
             <button onclick="downloadApp()">Download</button>
@@ -225,16 +189,16 @@
         <section class="reviews">
             <h3>User Reviews</h3>
             <div class="review">
-                <p class="review-text">"Best Toolkit And Excellent Design" - Ayesha Khan</p>
+                <p class="review-text">"Best Toolkit and Excellent Design" - Ayesha Khan</p>
             </div>
             <div class="review">
-                <p class="review-text">"All Method Are Working Love You Admins." - Ali Raza</p>
+                <p class="review-text">"All methods are working. Love you admins." - Ali Raza</p>
             </div>
             <div class="review">
-                <p class="review-text">"Just Mind Blowing." - Fatima Tariq</p>
+                <p class="review-text">"Just mind blowing." - Fatima Tariq</p>
             </div>
             <div class="review">
-                <p class="review-text">"Excellent Support They Solve My Problem In 1 minute!" - Ahmed Malik</p>
+                <p class="review-text">"Excellent support. They solved my problem in 1 minute!" - Ahmed Malik</p>
             </div>
         </section>
     </main>
@@ -243,7 +207,7 @@
     </footer>
     <script>
         function downloadApp() {
-            window.location.href="https://apk.e-droid.net/apk/app3289809-dbenjz.apk?v=13";
+            window.location.href = "https://apk.e-droid.net/apk/app3289809-dbenjz.apk?v=13";
         }
     </script>
 </body>
