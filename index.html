@@ -8,14 +8,14 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #f2f2f2;
             overflow-x: hidden;
             touch-action: manipulation;
         }
 
         header {
-            background: #333;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
             padding: 20px;
             text-align: center;
         }
@@ -24,6 +24,9 @@
             margin: 0;
             font-size: 2em;
             color: #f39c12;
+            background: -webkit-linear-gradient(#f39c12, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         main {
@@ -47,6 +50,9 @@
             display: flex;
             align-items: center;
             margin: 10px 0;
+            background: -webkit-linear-gradient(#f39c12, #d35400);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .app-details h2 img {
@@ -57,6 +63,9 @@
             margin: 20px 0;
             font-size: 1.2em;
             max-width: 600px;
+            background: -webkit-linear-gradient(#ecf0f1, #bdc3c7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .size, .region {
@@ -68,19 +77,24 @@
             padding: 10px 20px;
             font-size: 1em;
             color: #fff;
-            background-color: #f39c12;
+            background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
 
         button:hover {
-            background-color: #d35400;
+            background: linear-gradient(135deg, #d35400 0%, #f39c12 100%);
+            transform: scale(1.05);
         }
 
         .app-images {
             text-align: center;
             margin-top: 40px;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
         }
 
         .app-images h3 {
@@ -88,24 +102,23 @@
         }
 
         .images {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 10px;
-            padding: 10px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
         }
 
         .images img {
-            flex-shrink: 0;
-            width: 200px;
+            width: 100%;
+            max-width: 800px;
             height: auto;
-            border: 2px solid #f39c12;
-            transition: transform 0.3s;
-            scroll-snap-align: start;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .images img:hover {
-            transform: scale(1.1);
+        .images img.active {
+            display: block;
         }
 
         .reviews {
@@ -141,14 +154,9 @@
             font-size: 1em;
         }
 
-        /* Disable zooming */
-        body {
-            touch-action: manipulation;
-        }
-
         @media screen and (max-width: 600px) {
             .images img {
-                width: 150px;
+                width: 100%;
             }
         }
     </style>
@@ -172,7 +180,7 @@
         <section class="app-images">
             <h3>Screenshots</h3>
             <div class="images">
-                <img src="screenshot1.jpg" alt="Screenshot 1">
+                <img src="screenshot1.jpg" alt="Screenshot 1" class="active">
                 <img src="screenshot2.jpg" alt="Screenshot 2">
                 <img src="screenshot3.jpg" alt="Screenshot 3">
                 <img src="screenshot4.jpg" alt="Screenshot 4">
@@ -181,23 +189,23 @@
                 <img src="screenshot7.jpg" alt="Screenshot 7">
                 <img src="screenshot8.jpg" alt="Screenshot 8">
                 <img src="screenshot9.jpg" alt="Screenshot 9">
-                <img src="screenshot10.jpg" alt="Screenshot 9">
-                <img src="screenshot11.jpg" alt="Screenshot 9">
+                <img src="screenshot10.jpg" alt="Screenshot 10">
+                <img src="screenshot11.jpg" alt="Screenshot 11">
             </div>
         </section>
          <section class="reviews">
             <h3>User Reviews</h3>
             <div class="review">
-                <p class="review-text">"Best Toolkit And Excellent Design" - Qamar Ahmed</p>
+                <p class="review-text">"Best Toolkit And Excellent Design" - Ayesha Khan</p>
             </div>
             <div class="review">
-                <p class="review-text">"All Method Are Working Love You Admins." - Asif Ali</p>
+                <p class="review-text">"All Method Are Working Love You Admins." - Ali Raza</p>
             </div>
             <div class="review">
-                <p class="review-text">"Just Mind Blowing." - Hasnain Shafiq</p>
+                <p class="review-text">"Just Mind Blowing." - Fatima Tariq</p>
             </div>
             <div class="review">
-                <p class="review-text">"Excellent Support They Solve My Problem In 1 minute!" - Fahad Shakeel</p>
+                <p class="review-text">"Excellent Support They Solve My Problem In 1 minute!" - Ahmed Malik</p>
             </div>
         </section>
     </main>
@@ -206,10 +214,20 @@
     </footer>
     <script>
         function downloadApp() {
-            window.location.href="https://apk.e-droid.net/apk/app3289809-dbenjz.apk?v=13" ;
+            window.location.href="https://apk.e-droid.net/apk/app3289809-dbenjz.apk?v=12";
         }
+
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.images img');
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 3000); // Change slide every 3 seconds
     </script>
 </body>
-
-<!-- Mirrored from downloadaxet.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2017], Sun, 24 Nov 2024 18:33:25 GMT -->
 </html>
